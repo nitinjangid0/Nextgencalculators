@@ -1,0 +1,130 @@
+<DOCTYPE HTML>
+  <lang='en'  html>
+  <head>
+    <title>
+       NITIN CALCULATOR
+      <link rel="stylesheet" href="index.css">
+    </title>
+     <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+       <main class="main" >
+       <header class="top-header">CALCULATOR</header>
+  <div id="calculator">
+   <input type="text" id="display" readonly>
+   <div class="button-container">
+
+    <button class="button special"
+    onclick="currentDisplay=''; document.querySelector('#display').value=currentDisplay;">
+    AC
+    </button>
+
+    <button class="button special"
+    onclick="currentDisplay=currentDisplay.slice(0,-1);
+    document.querySelector('#display').value=currentDisplay;">
+    DEL
+    </button>
+
+    <button class="button"
+    onclick="currentDisplay+='/' ;
+    document.querySelector('#display').value=currentDisplay;">
+    /
+    </button>
+
+    <button class="button"
+    onclick="currentDisplay+='*' ;
+    document.querySelector('#display').value=currentDisplay;">
+    *
+    </button>
+
+    <button class="button" onclick="currentDisplay+='7'; document.querySelector('#display').value=currentDisplay;">7</button>
+    <button class="button" onclick="currentDisplay+='8'; document.querySelector('#display').value=currentDisplay;">8</button>
+    <button class="button" onclick="currentDisplay+='9'; document.querySelector('#display').value=currentDisplay;">9</button>
+    <button class="button" onclick="currentDisplay+='-'; document.querySelector('#display').value=currentDisplay;">-</button>
+
+    <button class="button" onclick="currentDisplay+='4'; document.querySelector('#display').value=currentDisplay;">4</button>
+    <button class="button" onclick="currentDisplay+='5'; document.querySelector('#display').value=currentDisplay;">5</button>
+    <button class="button" onclick="currentDisplay+='6'; document.querySelector('#display').value=currentDisplay;">6</button>
+    <button class="button" onclick="currentDisplay+='+'; document.querySelector('#display').value=currentDisplay;">+</button>
+
+    <button class="button" onclick="currentDisplay+='1'; document.querySelector('#display').value=currentDisplay;">1</button>
+    <button class="button" onclick="currentDisplay+='2'; document.querySelector('#display').value=currentDisplay;">2</button>
+    <button class="button" onclick="currentDisplay+='3'; document.querySelector('#display').value=currentDisplay;">3</button>
+
+    <button class="button" id="equal"
+    onclick="currentDisplay=eval(currentDisplay);
+    document.querySelector('#display').value=currentDisplay;">
+    =
+    </button>
+
+    <button class="button"
+    style="grid-column: span 2;"
+    onclick="currentDisplay+='0';
+    document.querySelector('#display').value=currentDisplay;">
+    0
+    </button>
+
+    <button class="button"
+    onclick="currentDisplay+='.';
+    document.querySelector('#display').value=currentDisplay;">
+    .
+    </button>
+
+</div>
+  </div>
+    </main>
+    <script>
+      let currentDisplay = '';
+      document.querySelector('#display').value =currentDisplay ;
+      //chatgpt
+      document.addEventListener("keydown", function(event) {
+   console.log(event.key);
+});
+// main code 
+let display = document.getElementById("display");
+
+document.addEventListener("keydown", function(event) {
+
+    let key = event.key;
+
+    // Numbers
+    if (!isNaN(key)) {
+        currentDisplay += key;
+        display.value = currentDisplay;
+    }
+
+    // Operators
+    if (key === "+" || key === "-" || key === "*" || key === "/") {
+        currentDisplay += key;
+        display.value = currentDisplay;
+    }
+
+    // Decimal
+    if (key === ".") {
+        currentDisplay += ".";
+        display.value = currentDisplay;
+    }
+
+    // Enter
+    if (key === "Enter") {
+        currentDisplay = eval(currentDisplay).toString();
+        display.value = currentDisplay;
+    }
+
+    // Backspace = DEL
+    if (key === "Backspace") {
+        currentDisplay = currentDisplay.slice(0, -1);
+        display.value = currentDisplay;
+    }
+
+    // Escape = AC
+    if (key === "Escape") {
+        currentDisplay = "";
+        display.value = currentDisplay;
+    }
+
+});
+
+    </script>
+  </body>
+  </html>

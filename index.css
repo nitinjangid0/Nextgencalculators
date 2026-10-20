@@ -1,0 +1,151 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body{
+  min-height: 100vh;
+  background: linear-gradient(135deg, #06132a, #0f172a);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top-header{
+  margin-bottom: 15px;
+  padding: 8px 25px;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  box-shadow: 0 0 15px rgba(37,99,235,0.6);
+}
+
+#calculator{
+  width: 280px;
+  padding: 18px;
+  border-radius: 18px;
+  background: #111827;
+  border: 2px solid #334155;
+  box-shadow: 0 0 30px rgba(96,165,250,0.4);
+  
+}
+
+#display{
+  width: 100%;
+  height: 55px;
+  margin-bottom: 20px;
+  padding: 10px;
+  font-size: 26px;
+  text-align: right;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.button-container{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.button{
+  height: 55px;
+  border-radius: 14px;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  background: #c7d2fe;
+  color: #111827;
+  transition: 0.2s;
+}
+
+.button:hover{
+  transform: scale(1.05);
+  background: #93c5fd;
+}
+
+.special{
+  background: #ef4444;
+  color: white;
+}
+
+#equal{
+  background: #22c55e;
+  color: white;
+}
+
+@media(max-width: 480px){
+
+  body{
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .top-header{
+    font-size: 26px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+     padding: 10px 20px;
+  }
+
+  #calculator{
+    width: 90%;
+    height:200px ;
+    max-width: 380px;
+    padding: 25px;
+    border-radius: 25px;
+     transform: scale(1.15);
+  }
+
+  #display{
+    width: 100%;
+    height: 80px;
+    font-size: 34px;
+    padding: 15px;
+    text-align: right;
+    border-radius: 18px;
+    margin-bottom: 22px;
+  }
+
+  .button-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+  }
+
+  .button{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+  .special{
+    background: #ef4444;
+    color: white;
+  }
+
+  #equal{
+    background: #22c55e;
+    color: white;
+  }
+}
